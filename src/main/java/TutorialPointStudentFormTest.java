@@ -1,3 +1,4 @@
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,6 +18,12 @@ public class TutorialPointStudentFormTest {
     public void totoNastanePredKazdymTestom(){
         WebDriverManager.chromedriver().setup();
         ovladac = new ChromeDriver();
+    }
+
+    @After
+    public void totoSaStanePoKazdomTeste(){
+        ovladac.close();
+        ovladac.quit();
     }
 
     @Given("Uzivatel je na stranke tutorial point student form")
